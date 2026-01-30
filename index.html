@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HỒ CHÍ MINH: HÀNH TRÌNH TỰ DO</title>
+  <meta name="description" content="Website storytelling – scroll interaction về hành trình lịch sử của Chủ tịch Hồ Chí Minh.">
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900|Merriweather:700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Lato:400,700&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+<body>
+  <header class="main-header">
+    <div class="logo-title">
+      <h1>HỒ CHÍ MINH: HÀNH TRÌNH TỰ DO</h1>
+      <p class="slogan">Từ bến Nhà Rồng đến khát vọng độc lập.</p>
+    </div>
+    <button class="hamburger" aria-label="Mở menu"><span></span><span></span><span></span></button>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">Trang chủ</a></li>
+        <li><a href="timeline.html">Dòng thời gian</a></li>
+        <li><a href="map.html">Bản đồ</a></li>
+        <li><a href="core-values.html">Tủ sách tư tưởng</a></li>
+        <li><a href="media.html">Tư liệu</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <!-- Section 1: Hero -->
+    <section id="hero" class="section hero-section">
+      <div class="hero-content">
+        <div class="hero-text">
+          <p class="intro">Khám phá hành trình vĩ đại của người thanh niên yêu nước Nguyễn Tất Thành –<br>
+            từ bước chân khởi đầu tại bến Nhà Rồng đến khát vọng độc lập cháy bỏng<br>
+            làm thay đổi vận mệnh dân tộc.</p>
+          <blockquote class="hcm-quote">
+            <span>"Nước Việt Nam là một, dân tộc Việt Nam là một.<br>
+            Sông có thể cạn, núi có thể mòn, song chân lý đó không bao giờ thay đổi."</span>
+          </blockquote>
+        </div>
+        <div class="hero-image-container">
+          <img src="assets/hcm.png" alt="Chủ tịch Hồ Chí Minh" class="hero-image">
+        </div>
+        <button class="cta-btn" id="cta-explore">Khám phá ngay ↓</button>
+      </div>
+    </section>
+    <!-- Section 2: 30 năm -->
+    <section id="years" class="section counter-section">
+      <div class="counter-block">
+        <div class="counter-number" data-target="30">0</div>
+        <div class="counter-label">NĂM</div>
+        <p class="counter-desc">Từ năm 1911 đến 1941, Người đã vượt qua 3 đại dương, đặt chân đến 4 châu lục và hàng chục quốc gia để tìm con đường cứu nước.</p>
+      </div>
+    </section>
+    <!-- Section 3: 174 tên gọi -->
+    <section id="names" class="section counter-section">
+      <div class="counter-block">
+        <div class="counter-number" data-target="174">0</div>
+        <div class="counter-label">TÊN GỌI</div>
+        <p class="counter-desc">Tổng số bút danh, bí danh và tên gọi Người đã sử dụng trong suốt cuộc đời hoạt động cách mạng bí mật.</p>
+      </div>
+    </section>
+    <!-- Section 4: 20+ ngoại ngữ -->
+    <section id="languages" class="section counter-section">
+      <div class="counter-block">
+        <div class="counter-number" data-target="20">0</div>
+        <div class="counter-label">NGOẠI NGỮ</div>
+        <p class="counter-desc">Bác sử dụng thành thạo hơn 20 ngôn ngữ và tiếng dân tộc. Người tự học ngoại ngữ trong lao động, sinh hoạt và cả chốn lao tù.</p>
+      </div>
+    </section>
+    <!-- Section 5: 01 khát vọng -->
+    <section id="aspiration" class="section counter-section">
+      <div class="counter-block">
+        <div class="counter-number" data-target="1">0</div>
+        <div class="counter-label">KHÁT VỌNG</div>
+        <blockquote class="aspiration-quote">
+          <span>Tôi chỉ có một sự ham muốn, ham muốn tột bậc, là làm sao cho nước ta được hoàn toàn độc lập, dân ta được hoàn toàn tự do, đồng bào ai cũng có cơm ăn áo mặc, ai cũng được học hành.</span>
+        </blockquote>
+      </div>
+    </section>
+    <!-- Section 6: Kết cảm xúc -->
+    <section id="ending" class="section ending-section">
+      <div class="ending-content">
+        <p>Gác lại những trăn trở của một người thanh niên trẻ, Nguyễn Tất Thành đã bước chân xuống con tàu Amiral Latouche-Tréville vào tháng 6 năm 1911... Website này là không gian để nhìn lại hành trình vĩ đại ấy bằng lăng kính của tư duy hiện đại.</p>
+      </div>
+    </section>
+    <!-- Timeline Page -->
+    <section id="timeline" class="section timeline-section page-section" style="display:none;">
+      <h2 class="section-title">Dòng thời gian lịch sử</h2>
+      <div class="timeline">
+        <!-- Timeline items sẽ được render bằng JS -->
+      </div>
+    </section>
+    <!-- Map Page -->
+    <section id="map" class="section map-section page-section" style="display:none;">
+      <h2 class="section-title">Dấu chân Người trên thế giới</h2>
+      <div class="map-container">
+        <img src="assets/world-map.svg" alt="Bản đồ thế giới" class="world-map">
+        <div class="map-markers"><!-- Markers sẽ render bằng JS --></div>
+      </div>
+      <div class="map-popup" id="map-popup">
+        <button class="close-popup">×</button>
+        <div class="popup-content"><!-- Nội dung popup --></div>
+      </div>
+    </section>
+    <!-- Core Values Page -->
+    <section id="core-values" class="section core-values-section page-section" style="display:none;">
+      <h2 class="section-title">Tủ sách tư tưởng</h2>
+      <div class="core-values-cards"><!-- Cards sẽ render bằng JS --></div>
+    </section>
+    <!-- Media Page -->
+    <section id="media" class="section media-section page-section" style="display:none;">
+      <h2 class="section-title">Tư liệu lịch sử</h2>
+      <div class="media-videos">
+        <div class="media-video">
+          <iframe src="https://www.youtube.com/embed/2Qk4pF1F4bA" title="Bác đọc Tuyên ngôn Độc lập" allowfullscreen></iframe>
+        </div>
+        <div class="media-video">
+          <iframe src="https://www.youtube.com/embed/1w8Q4l6rP4w" title="Bác thăm các nước XHCN" allowfullscreen></iframe>
+        </div>
+      </div>
+      <div class="media-gallery">
+        <div class="gallery-item"><img src="assets/dep-lop.jpg" alt="Dép lốp"><p>Dép lốp – Biểu tượng giản dị của Bác</p></div>
+        <div class="gallery-item"><img src="assets/gay-may.jpg" alt="Gậy mây"><p>Gậy mây – Người bạn đồng hành</p></div>
+        <div class="gallery-item"><img src="assets/kaki.jpg" alt="Quần áo kaki"><p>Quần áo kaki – Trang phục quen thuộc</p></div>
+      </div>
+    </section>
+    <!-- Youth Page -->
+    <section id="youth" class="section youth-section page-section" style="display:none;">
+      <h2 class="section-title">Bác trong trái tim người trẻ</h2>
+      <div class="youth-reflections"><!-- Cảm nhận sẽ render bằng JS --></div>
+    </section>
+  </main>
+  <footer class="main-footer">
+    <p>© 2026 HỒ CHÍ MINH: HÀNH TRÌNH TỰ DO. Thiết kế bởi group 6</p>
+  </footer>
+  <script src="js/main.js"></script>
+</body>
+</html>
