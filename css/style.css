@@ -53,17 +53,22 @@ body {
   min-height: 100vh;
 }
 .main-header {
-  position: fixed;
+  position: sticky;
+  top: 0;
+  left: 0;
   width: 100%;
-  top: 0; left: 0;
-  background: rgba(255,255,255,0.95);
   z-index: 1000;
+
+  background: rgba(255,255,255,0.95);
   box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0.5rem 2rem;
 }
+
+
 .logo-title h1 {
   font-family: var(--font-title);
   color: var(--red);
@@ -119,7 +124,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 6rem 1rem 2rem 1rem;
+  padding: 1rem 1rem 2rem 1rem;
   position: relative;
 }
 .hero-section {
@@ -135,19 +140,19 @@ body {
 .hero-text .intro {
   font-size: 1.4rem;
   font-family: var(--font-body);
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 .hcm-quote {
   font-family: var(--font-title);
   font-size: 1.2rem;
   color: var(--yellow);
-  margin: 1.5rem 0 2rem 0;
+  margin: 1rem 0 2rem 0;
   font-style: italic;
 }
 .hero-image-container {
   display: flex;
   justify-content: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 .hero-image {
   width: 220px;
@@ -347,6 +352,159 @@ body {
 .timeline-item.right::before {
   left: 0;
   transform: translateX(-50%);
+}
+
+.marker-circle {
+  width: 28px;
+  height: 28px;
+  background: #b22222;
+  border: 3px solid white;
+  border-radius: 50%;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.journey-section {
+  padding: 60px 0;
+  background: #f7f6f2; /* nhẹ, kiểu bảo tàng */
+}
+
+.journey-intro {
+  max-width: 1100px;
+  margin: 0 auto 24px auto;
+  padding: 0 24px;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #444;
+}
+
+.journey-map-wrapper {
+  max-width: 1200px;   /* 👈 KHỐNG CHẾ ĐỘ RỘNG */
+  margin: 0 auto;      /* 👈 CĂN GIỮA */
+  padding: 0 24px;     /* 👈 CÁCH LỀ TRÁI PHẢI */
+}
+
+#journey-map {
+  width: 100%;
+  height: 520px;       /* có thể giảm xuống 480 nếu muốn */
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+  background: #ddd;
+}
+
+.info-panel {
+  position: fixed;
+  top: 0;
+  right: -420px;          /* Ẩn bên ngoài */
+  width: 400px;
+  height: 100vh;
+  background: #fff;
+  box-shadow: -4px 0 20px rgba(0,0,0,0.2);
+  z-index: 1000;
+  overflow-y: auto;
+  transition: right 0.3s ease;
+}
+
+/* Khi mở */
+.info-panel.open {
+  right: 0;
+}
+
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  background: transparent;
+  border: none;
+  font-size: 22px;
+  color: white;
+  cursor: pointer;
+}
+
+.custom-marker .marker-circle {
+  width: 28px;
+  height: 28px;
+  background: #991b1b;
+  color: #fff;
+  border-radius: 50%;
+  font-weight: bold;
+  text-align: center;
+  line-height: 28px;
+  box-shadow: 0 0 0 4px rgba(153,27,27,0.25);
+  transition: all 0.3s ease;
+}
+
+.custom-marker .marker-circle.active {
+  background: #dc2626;
+  transform: scale(1.3);
+  box-shadow: 0 0 0 8px rgba(220,38,38,0.3);
+}
+.info-panel {
+  position: fixed;
+  top: 80px;
+  right: -420px;
+  width: 400px;
+  height: calc(100vh - 120px);
+  background: #fff;
+  box-shadow: -8px 0 30px rgba(0,0,0,0.2);
+  border-radius: 16px 0 0 16px;
+  overflow-y: auto;
+  transition: right 0.4s ease;
+  z-index: 999;
+}
+
+.info-panel.open {
+  right: 20px;
+}
+
+.panel-header {
+  background: linear-gradient(135deg, #991b1b, #b91c1c);
+  color: white;
+  padding: 20px;
+}
+
+.panel-header h2 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.panel-time {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.panel-body {
+  padding: 20px;
+  line-height: 1.6;
+}
+
+.panel-body h3 {
+  margin-top: 20px;
+  color: #991b1b;
+}
+
+.panel-body ul {
+  padding-left: 18px;
+}
+
+.panel-body li {
+  margin-bottom: 6px;
+}
+
+.panel-image {
+  width: 100%;
+  overflow: hidden;
+  background: #f3f4f6;
+}
+
+.panel-image img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+  border-bottom: 1px solid #e5e7eb;
 }
 
 /* Map */
@@ -553,34 +711,285 @@ body {
   font-size: 1rem;
   letter-spacing: 1px;
 }
-/* Responsive */
+/* ===============================
+   RESPONSIVE – TABLET & MOBILE
+================================ */
+
+/* ---------- ≤ 900px ---------- */
 @media (max-width: 900px) {
-  .main-header { padding: 0.5rem 1rem; }
-  .timeline, .map-container { max-width: 100vw; }
-  .core-values-cards { gap: 1rem; }
+  .main-header {
+    padding: 0.5rem 1rem;
+  }
+
+  .timeline,
+  .map-container {
+    max-width: 100vw;
+  }
+
+  .core-values-cards {
+    gap: 1rem;
+  }
 }
-@media (max-width: 700px) {
-  .main-header { flex-direction: column; align-items: flex-start; }
-  .main-nav { margin-left: 0; width: 100%; }
-  .main-nav ul { flex-direction: column; gap: 0.5rem; }
-  .main-nav { display: none; }
-  .main-nav.active { display: block; }
-  .hamburger { display: flex; }
-  .section { padding: 4.5rem 0.5rem 1.5rem 0.5rem; }
-  .timeline-item, .timeline-item.left, .timeline-item.right { width: 100%; left: 0; text-align: left; }
-  .timeline::before { left: 16px; }
-  .timeline-item { padding-left: 40px; }
-  .timeline-card { align-items: flex-start; }
-  .core-values-cards { flex-direction: column; align-items: center; }
-  .media-videos { gap: 1rem; }
-  .media-video iframe { width: 98vw; height: 54vw; }
-  .media-gallery { gap: 1rem; }
+
+/* ---------- ≤ 768px (MOBILE CHÍNH) ---------- */
+@media (max-width: 768px) {
+
+  /* ===== HEADER ===== */
+  .main-header {
+    position: sticky;
+    display: flex;
+    flex-direction: row;              
+    justify-content: space-between;   
+    align-items: center;
+    padding: 12px 16px;
+    z-index: 20;
+  }
+
+  /* Logo: chỉ hiện ảnh */
+  .logo-title {
+    display: flex;
+    align-items: center;
+  }
+
+  .logo-title h1,
+  .logo-title p {
+    display: none;
+  }
+
+  .logo-title::before {
+    content: "";
+    width: 40px;
+    height: 40px;
+    background: url("assets/logo.png") center / contain no-repeat;
+    display: block;
+  }
+
+  /* Hamburger */
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* ===== NAV MENU ===== */
+  .main-nav {
+    width: 100%;
+    display: none;                    /* ẩn mặc định */
+    margin-top: 10px;
+  }
+
+  .main-nav.active {
+    display: block;                   /* hiện khi click */
+  }
+
+  .main-nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 12px 0;
+  }
+
+  /* ===== MAIN CONTENT ===== */
+  main {
+    padding-top: 0;                   /* không bị header đè */
+  }
+
+  .section {
+    padding: 1.5rem 0.75rem;
+  }
+
+  /* ===== INFO PANEL (CARD) ===== */
+  .info-panel {
+    top: 50%;
+    left: 50%;
+    right: auto;
+    transform: translate(-50%, -50%) scale(0.96);
+
+    width: 92%;
+    max-width: 420px;
+    max-height: 78vh;                 /* ⭐ NGẮN HƠN – CHỪA MAP */
+    height: auto;
+
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.35s ease;
+  }
+
+  .info-panel.open {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  .info-panel .close-btn {
+    font-size: 26px;
+    top: 10px;
+    right: 14px;
+  }
+
+/* ===== TIMELINE WRAPPER ===== */
+  .timeline {
+    position: relative;
+    padding-left: 48px; /* chừa chỗ cho line + dot */
+  }
+
+  /* ===== LINE DỌC ===== */
+  .timeline::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 20px;              /* ⭐ ép line sang trái */
+    width: 4px;
+    background: #f59e0b;     /* màu vàng timeline */
+    border-radius: 2px;
+  }
+
+  /* ===== TIMELINE IMAGE ===== */
+  .timeline-card img {
+    width: 100%;
+    height: 200px;              /* ⭐ TO HƠN */
+    object-fit: cover;
+    border-radius: 16px;
+
+    border: 3px solid #f59e0b;  /* viền vàng */
+    margin-bottom: 14px;
+  }
+
+
+  /* ===== ITEM ===== */
+  .timeline-item,
+  .timeline-item.left,
+  .timeline-item.right {
+    width: 100%;
+    left: 0;
+    padding: 0 0 32px 0;
+    text-align: left;
+    position: relative;
+  }
+
+  /* ===== DOT ===== */
+  .timeline-item::before {
+    content: "";
+    position: absolute;
+    left: 12px;              /* nằm đúng trên line */
+    top: 24px;
+    width: 16px;
+    height: 16px;
+    background: #b91c1c;     /* đỏ */
+    border-radius: 50%;
+    z-index: 2;
+  }
+
+  /* ===== CARD ===== */
+  .timeline-card {
+    margin-left: 24px;       /* ⭐ card lệch phải */
+    width: calc(100% - 24px);
+    padding: 16px;
+  }
+
+  /* .timeline-card img {
+    height: 160px;
+    object-fit: cover;
+    border-radius: 12px;
+  } */
+
+  .timeline-card img {
+  width: 100%;          /* ⭐ QUAN TRỌNG */
+  height: 220px;        /* to hơn hẳn */
+  object-fit: cover;
+
+  border-radius: 16px;
+  border: 3px solid #f59e0b;
+  display: block;
 }
+
+
+  /* ===== TEXT SCALE ===== */
+  .timeline-year {
+    font-size: 20px;
+  }
+
+  .timeline-title {
+    font-size: 18px;
+    line-height: 1.4;
+  }
+
+  .timeline-desc,
+  .timeline-meaning {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .hero-section {
+    min-height: calc(100vh - 64px); /* trừ chiều cao header */
+    display: flex;
+    align-items: center;
+    padding: 1.5rem 1rem;
+  }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  /* TEXT */
+  .hero-text {
+    max-width: 100%;
+  }
+
+  .hero-text .intro {
+    font-size: 0.75rem;
+    line-height: 1.3;
+  }
+
+  .hcm-quote {
+    font-size: 0.7rem;
+    margin-top: 0.6rem;
+  }
+
+  /* IMAGE */
+  .hero-image-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .hero-image {
+    width: 60%;
+    max-width: 220px;
+    height: auto;
+  }
+
+  /* CTA */
+  .cta-btn {
+    margin-top: 0.5rem;
+    font-size: 0.95rem;
+    padding: 0.6rem 1.4rem;
+  }
+}
+
+/* ---------- ≤ 500px (MOBILE NHỎ) ---------- */
 @media (max-width: 500px) {
-  .logo-title h1 { font-size: 1.1rem; }
-  .slogan { font-size: 0.9rem; }
-  .counter-block { padding: 1.2rem 0.5rem; }
-  .counter-number { font-size: 3.2rem; }
-  .section-title { font-size: 1.3rem; }
-  .ending-content p { font-size: 1rem; }
+
+  .counter-number {
+    font-size: 3rem;
+  }
+
+  .section-title {
+    font-size: 1.25rem;
+  }
+
+  .ending-content p {
+    font-size: 1rem;
+  }
 }

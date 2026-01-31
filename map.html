@@ -1,14 +1,34 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bản đồ | HỒ CHÍ MINH: HÀNH TRÌNH TỰ DO</title>
   <link rel="stylesheet" href="css/style.css">
-  <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900|Merriweather:700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900|Merriweather:700&display=swap"
+    rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Lato:400,700&display=swap" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <style>
+    .map-wrapper {
+      max-width: 1100px;
+      /* hoặc 1000px */
+      margin: 0 auto;
+    }
+
+    #journey-map {
+      width: 100%;
+      height: 520px;
+      /* gọn gàng, học thuật */
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    }
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
 </head>
+
 <body>
   <header class="main-header">
     <div class="logo-title">
@@ -27,21 +47,36 @@
     </nav>
   </header>
   <main>
-    <section id="map" class="section map-section">
-      <h2 class="section-title">Dấu chân Người trên thế giới</h2>
-      <div class="map-container">
-        <img src="assets/world-map.svg" alt="Bản đồ thế giới" class="world-map">
-        <div class="map-markers"></div>
-      </div>
-      <div class="map-popup" id="map-popup">
-        <button class="close-popup">×</button>
-        <div class="popup-content"></div>
-      </div>
-    </section>
+   
+    <section class="journey-section">
+  <p class="journey-intro">
+    Mỗi tọa độ trên bản đồ này là một chứng nhân cho quá trình khảo sát thực tiễn sâu sắc của Người...
+  </p>
+
+  <div class="journey-map-wrapper">
+    <div id="journey-map"></div>
+  </div>
+  <!-- Panel thông tin -->
+<div id="infoPanel" class="info-panel">
+  <button class="close-btn" onclick="closePanel()">×</button>
+
+  <div id="panelContent">
+    <!-- Nội dung sẽ render bằng JS -->
+  </div>
+</div>
+
+</section>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">
+    </script>
+    <script src="js/main.js"></script>
+    <script src="js/map.js"></script>
+
   </main>
   <footer class="main-footer">
     <p>© 2026 HỒ CHÍ MINH: HÀNH TRÌNH TỰ DO. Thiết kế bởi group 6</p>
   </footer>
-  <script src="js/map.js"></script>
+  <!-- <script src="js/map.js"></script> -->
 </body>
+
 </html>
