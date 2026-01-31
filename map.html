@@ -5,6 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bản đồ | HỒ CHÍ MINH: HÀNH TRÌNH TỰ DO</title>
+  <link rel="icon" type="image/png" href="assets/logo.jpg">
+
   <link rel="stylesheet" href="css/style.css">
   <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900|Merriweather:700&display=swap"
     rel="stylesheet">
@@ -46,26 +48,32 @@
       </ul>
     </nav>
   </header>
+  <section class="page-intro">
+    <h1 class="page-intro-title">Dấu chân Người</h1>
+    <p class="page-intro-desc">
+      "Mỗi tọa độ trên bản đồ này là một chứng nhân cho quá trình khảo sát thực tiễn sâu sắc của Người qua 3 đại dương
+      và 4 châu lục. Hãy cùng lần theo những dấu chân bền bỉ để thấy cách Người thấu hiểu bản chất thế giới, kết nối nỗi
+      đau của các dân tộc bị áp bức và tìm ra ánh sáng chân lý cho con đường cứu nước của Việt Nam."
+    </p>
+  </section>
   <main>
-   
+
     <section class="journey-section">
-  <p class="journey-intro">
-    Mỗi tọa độ trên bản đồ này là một chứng nhân cho quá trình khảo sát thực tiễn sâu sắc của Người...
-  </p>
 
-  <div class="journey-map-wrapper">
-    <div id="journey-map"></div>
-  </div>
-  <!-- Panel thông tin -->
-<div id="infoPanel" class="info-panel">
-  <button class="close-btn" onclick="closePanel()">×</button>
 
-  <div id="panelContent">
-    <!-- Nội dung sẽ render bằng JS -->
-  </div>
-</div>
+      <div class="journey-map-wrapper">
+        <div id="journey-map"></div>
+      </div>
+      <!-- Panel thông tin -->
+      <div id="infoPanel" class="info-panel">
+        <button class="close-btn" onclick="closePanel()">×</button>
 
-</section>
+        <div id="panelContent">
+          <!-- Nội dung sẽ render bằng JS -->
+        </div>
+      </div>
+
+    </section>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">
     </script>
@@ -74,7 +82,7 @@
 
   </main>
   <footer class="main-footer">
-    <p>© 2026 HỒ CHÍ MINH: HÀNH TRÌNH TỰ DO. Thiết kế bởi group 6</p>
+    <p>© 2026 HỒ CHÍ MINH: HÀNH TRÌNH TỰ DO. Thiết kế bởi GROUP 6</p>
   </footer>
   <!-- <script src="js/map.js"></script> -->
 </body>
