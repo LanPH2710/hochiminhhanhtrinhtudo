@@ -24,9 +24,30 @@ if (cta) {
 
 
 
-// ===== HEADER LUÔN HIỆN =====
+// ===== HEADER HIỆN/ẨN KHI SCROLL =====
 const header = document.querySelector('.main-header');
+let lastScrollY = window.scrollY;
 if (header) {
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    const windowHeight = window.innerHeight;
+    const docHeight = document.documentElement.scrollHeight;
+    // Luôn hiện ở đầu trang hoặc cuối trang
+    if (scrollY <= 0 || scrollY + windowHeight >= docHeight - 2) {
+      header.classList.add('show');
+      header.classList.remove('hide');
+    } else if (scrollY < lastScrollY) {
+      // Lướt lên: hiện header
+      header.classList.add('show');
+      header.classList.remove('hide');
+    } else {
+      // Lướt xuống: ẩn header
+      header.classList.remove('show');
+      header.classList.add('hide');
+    }
+    lastScrollY = scrollY;
+  });
+  // Mặc định hiện header
   header.classList.add('show');
   header.classList.remove('hide');
 }

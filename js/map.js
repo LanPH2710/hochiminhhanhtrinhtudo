@@ -96,7 +96,7 @@ const journeyPoints = [
   {
     id: 7,
     place: "Pác Bó (Cao Bằng, Việt Nam)",
-    coords: [22.8465, 106.3346],
+    coords: [22.2, 106.3346],
     time: "28/01/1941",
     alias: "Già Thu",
     context: "Nhật Bản tiến vào Đông Dương, Thế chiến II lan rộng. Pháp suy yếu nghiêm trọng, thời cơ giải phóng dân tộc đang đến gần.",

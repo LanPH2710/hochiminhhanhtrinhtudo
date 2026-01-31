@@ -51,6 +51,8 @@ body {
   background: var(--light);
   color: var(--dark);
   min-height: 100vh;
+  /* Đảm bảo không ẩn thanh cuộn */
+  overflow-y: auto;
 }
 .main-header {
   position: sticky;
@@ -66,6 +68,16 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 0.5rem 2rem;
+  transition: transform 0.3s cubic-bezier(0.4,0,0.2,1), box-shadow 0.3s;
+}
+
+.main-header.show {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+.main-header.hide {
+  transform: translateY(-120%);
+  box-shadow: none;
 }
 
 
