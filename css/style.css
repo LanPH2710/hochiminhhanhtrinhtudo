@@ -53,7 +53,9 @@
 html, body { height: 100%; scroll-behavior: smooth; }
 body {
   font-family: var(--font-body);
-  background: var(--light);
+  background: url('../assets/bg.png') no-repeat center center fixed;
+  background-size: cover;
+  background-attachment: fixed;
   color: var(--dark);
   min-height: 100vh;
   /* Đảm bảo không ẩn thanh cuộn */
@@ -157,7 +159,7 @@ body {
   position: relative;
 }
 .hero-section {
-  background: linear-gradient(120deg, var(--red) 60%, var(--yellow) 100%);
+  background: rgba(183, 28, 28, 0.4);
   color: #fff;
   flex-direction: column;
   text-align: center;
@@ -167,6 +169,7 @@ body {
   margin: 0 auto;
 }
 .hero-text .intro {
+  color: fffff;
   font-size: 1.4rem;
   font-family: var(--font-body);
   margin-bottom: 1rem;
@@ -174,7 +177,7 @@ body {
 .hcm-quote {
   font-family: var(--font-title);
   font-size: 1.2rem;
-  color: var(--yellow);
+  color: red;
   margin: 1rem 0 2rem 0;
   font-style: italic;
 }
@@ -215,7 +218,7 @@ body {
   color: #fff;
 }
 .counter-section {
-  background: var(--gray);
+  background: rgba(245, 245, 245, 0.3);
   flex-direction: column;
   text-align: center;
 }
@@ -255,11 +258,12 @@ body {
   font-style: italic;
 }
 .ending-section {
-  background: linear-gradient(120deg, var(--yellow) 60%, var(--red) 100%);
+  background: rgba(255, 202, 40, 0.4);
   color: #fff;
   text-align: center;
 }
 .ending-content p {
+  color: black;
   font-size: 2rem;
   font-family: var(--font-body);
   max-width: 700px;
@@ -274,7 +278,8 @@ body {
 }
 /* Timeline */
 .timeline-section {
-  background: #fff;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(6px);
   flex-direction: column;
 }
 .timeline {
@@ -602,7 +607,7 @@ body {
 
 /* Map */
 .map-section {
-  background: var(--gray);
+  background: rgba(245, 245, 245, 0.3);
   flex-direction: column;
 }
 .map-container {
@@ -676,7 +681,7 @@ body {
 }
 /* Core Values */
 .core-values-section {
-  background: #fff;
+  background: rgba(255, 255, 255, 0.85);
   flex-direction: column;
 }
 .core-values-cards {
@@ -753,7 +758,7 @@ body {
 
 /* Media */
 .media-section {
-  background: var(--gray);
+  background: rgba(245, 245, 245, 0.3);
   flex-direction: column;
 }
 .media-videos {
@@ -798,7 +803,7 @@ body {
 }
 /* Youth */
 .youth-section {
-  background: #fff;
+  background: rgba(255, 255, 255, 0.85);
   flex-direction: column;
 }
 .youth-reflections {
