@@ -24,33 +24,30 @@ if (cta) {
 
 
 
-// ===== HEADER HIỆN/ẨN KHI SCROLL =====
+// ===== HEADER SHOW / HIDE ON SCROLL =====
 const header = document.querySelector('.main-header');
 let lastScrollY = window.scrollY;
-if (header) {
-  window.addEventListener('scroll', () => {
-    const scrollY = window.scrollY;
-    const windowHeight = window.innerHeight;
-    const docHeight = document.documentElement.scrollHeight;
-    // Luôn hiện ở đầu trang hoặc cuối trang
-    if (scrollY <= 0 || scrollY + windowHeight >= docHeight - 2) {
-      header.classList.add('show');
-      header.classList.remove('hide');
-    } else if (scrollY < lastScrollY) {
-      // Lướt lên: hiện header
-      header.classList.add('show');
-      header.classList.remove('hide');
-    } else {
-      // Lướt xuống: ẩn header
-      header.classList.remove('show');
-      header.classList.add('hide');
-    }
-    lastScrollY = scrollY;
-  });
-  // Mặc định hiện header
-  header.classList.add('show');
-  header.classList.remove('hide');
-}
+
+window.addEventListener('scroll', () => {
+  const currentScroll = window.scrollY;
+
+  if (currentScroll <= 0) {
+    // Ở đầu trang → luôn hiện
+    header.classList.remove('hide');
+    header.classList.add('show');
+  } else if (currentScroll > lastScrollY) {
+    // Scroll xuống → ẩn
+    header.classList.remove('show');
+    header.classList.add('hide');
+  } else {
+    // Scroll lên → hiện
+    header.classList.remove('hide');
+    header.classList.add('show');
+  }
+
+  lastScrollY = currentScroll;
+});
+
 
 
 // ===================== COUNTER ANIMATION =====================

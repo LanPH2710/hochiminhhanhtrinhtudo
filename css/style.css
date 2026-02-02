@@ -1,13 +1,18 @@
 /* Page section (mỗi phần là 1 trang riêng) */
 .page-section {
   min-height: 100vh;
-  display: flex;
+  /* display: flex; */
+  /* display: none; */
+
   align-items: center;
   justify-content: center;
   padding: 6rem 1rem 2rem 1rem;
   position: relative;
   /* Ẩn mặc định, chỉ hiện khi JS set display='' */
   display: none;
+}
+.page-section.active {
+  display: flex;
 }
 @media (max-width: 700px) {
   .page-section { padding: 4.5rem 0.5rem 1.5rem 0.5rem; }
@@ -54,8 +59,20 @@ body {
   /* Đảm bảo không ẩn thanh cuộn */
   overflow-y: auto;
 }
+
+body {
+  padding-top: 80px;
+}
+@media (max-width: 991px) {
+  body {
+    padding-top: 0;
+  }
+}
+
+
 .main-header {
-  position: sticky;
+  /* position: sticky; */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -1139,4 +1156,22 @@ body {
   .page-intro-desc {
     font-size: 1.05rem;
   }
+}
+/* Chrome, Edge, Safari */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Firefox */
+html {
+  scrollbar-width: auto;
 }

@@ -3,7 +3,7 @@ const journeyPoints = [
   {
     id: 1,
     place: "Bến Cảng Nhà Rồng, Sài Gòn (Việt Nam)",
-    coords: [10.768, 106.705],
+    coords: [10.768116, 106.706962],
     time: "05/06/1911",
     alias: "Văn Ba",
     context: "Pháp hoàn thành bình định, bắt đầu khai thác thuộc địa lần 1...",
@@ -96,7 +96,7 @@ const journeyPoints = [
   {
     id: 7,
     place: "Pác Bó (Cao Bằng, Việt Nam)",
-    coords: [22.2, 106.3346],
+    coords: [22.977925, 106.050565],
     time: "28/01/1941",
     alias: "Già Thu",
     context: "Nhật Bản tiến vào Đông Dương, Thế chiến II lan rộng. Pháp suy yếu nghiêm trọng, thời cơ giải phóng dân tộc đang đến gần.",
@@ -115,7 +115,7 @@ const journeyPoints = [
 
 const map = L.map("journey-map", {
   minZoom: 2,
-  maxZoom: 5,
+  maxZoom: 16,
   worldCopyJump: false,   // không nhảy sang bản đồ khác
   maxBoundsViscosity: 1.0 // khóa biên
 }).setView([20, 0], 2);
